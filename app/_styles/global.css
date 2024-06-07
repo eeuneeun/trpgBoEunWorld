@@ -1,0 +1,633 @@
+.wrapper {
+    width: 100%;
+  }
+
+/* HEADER */
+.header{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header .logo{
+    width: 60px;
+    height: 50px;
+}
+
+.header.open .logo{
+    width: 150px;
+}
+.header .logo a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+}
+
+.header .logo a .summary-logo{
+  font-size: 30px;
+  font-weight: 600;  
+}
+.header.open .logo a .summary-logo{
+    display: none;
+}
+
+.header .logo a .full-logo{
+    display: none;
+    font-weight: 600;  
+}
+.header.open .logo a .full-logo{
+    display: inline-block;
+    color: #1c1c1c;
+}
+
+/* GNB */
+.gnb{
+    width: calc(100% - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.open .gnb{
+    width: calc(100% - 150px);
+}
+.gnb .snb-open-btn{
+    width: 50px;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gnb .snb-open-btn *{
+    color: #1c1c1c;
+}
+.gnb .menu-list li a{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.gnb .user-info{
+    margin-right: 30px;
+}
+.gnb .user-info
+.gnb .user-info ul,
+.gnb .user-info li{
+    height: 100%;
+}    
+.gnb .user-info .auth-info{
+    gap: 30px;
+}
+.gnb .user-info .auth-info .user-profile-wrap{
+    gap: 5px;
+}
+.gnb .user-info .auth-info .user-profile{
+    width: 35px;
+    height: 35px;
+    background: #43ac82;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gnb .user-info .auth-info .panel-wrap{
+    position: absolute;
+    bottom: -110px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #a8a8a8;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    overflow: hidden;
+}
+.gnb .user-info .auth-info .panel-wrap ul,
+.gnb .user-info .auth-info .panel-wrap ul * {
+    width: 100%;
+    height: 100%;
+}
+.gnb .user-info .auth-info .panel-wrap ul li {
+    height: 50%;
+    color: #000;
+    cursor: pointer;
+}
+.gnb .user-info .auth-info .panel-wrap ul li a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+}
+.gnb .user-info .auth-info .panel-wrap ul li a:hover{
+    background: #eee;
+}
+.gnb .user-info .signin-btn,
+.gnb .user-info .auth-info .signout-btn{
+    width: 35px;
+    height: 35px;
+    background: none;
+    color: #1c1c1c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* SNB */
+.snb{
+    width: 60px;
+    height: calc(100% - 50px);
+    position: absolute;
+    top: 50px;
+    left: 0;
+    border-right:1px solid #d7d7d7 ;
+}
+.snb.open{
+    width: 150px;
+}
+.snb ul,
+.snb ul li{
+    width: 100%;
+}
+.snb ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.snb > ul > li{
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+}
+.snb > ul > li a{
+    width: 100%;
+    height: 100%;
+    padding: 0 12.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 25px;
+    border-top: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+.snb > ul > li a span{
+    display: none;
+}
+.snb.open > ul > li a{
+    font-size: 18px;
+}
+.snb.open > ul > li a span{
+    display: inline-block;
+    width: 60%;
+    font-size: 15px;
+}
+
+
+/* CONTENTES */
+.contents-wrap{
+    width: calc(100% - 60px);
+    height: calc(100% - 50px);
+    position:absolute;
+    top: 50px;
+    left: 60px;
+    border-left: 1px solid #eee;
+    overflow: hidden;
+}
+.open + .contents-wrap{
+    width: calc(100% - 150px);
+    left: 150px;
+}
+.contents-wrap > main{
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+}
+
+.contents-wrap h2{
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    padding-left: 20px;
+    font-weight: 600;
+    position: relative;
+    color: #5b5b5b;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.contents-wrap h2::after{
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    width: 5px;
+    height: 5px;
+    background: #5b5b5b;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    margin-top: -2.5px;
+}
+.contents-wrap > section{
+    width: 100%;
+    height: calc(100% - 50px);
+}
+
+
+/* SIGN */
+.btn-group{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* SIGNUP */
+.signup{
+    width: 100%; 
+    height: 100%; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    gap: 10px;
+}
+
+.signup .form-wrap{
+    max-width:350px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.signup form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.signup form > *{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.signup form input{
+    width: 70%;
+    margin: 0;
+    color: #1c1c1c;
+}
+.signup .signin-btn{
+    max-width:450px;
+    width: 100%;
+    border-radius: 5px;
+    background: #52c999;
+    color: #fff;
+    transition: all ease 0.3s 0s;
+
+}
+.signup .signin-btn:hover{
+    background: #d39e7b;
+}
+.signup .signup-group{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.signup .signup-group li,
+.signup .signup-group li button,
+.signup .signup-group li a{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+}
+.signup .signup-group .naver{
+    width: 100%;
+    background: #2fd23a;
+    color: #fff;
+    font-weight: 800;
+    font-size: 25px;
+    border-radius: 5px;
+}
+.signup .signup-group .kakao{
+ background: #3e3e3e;
+ color: #fff202;
+ font-weight: 600;
+ font-size: 25px;
+ border-radius: 5px;
+}
+.signup .signup-group .google{
+    background: #ff0202;
+    color: #fff;
+    font-weight: 600;
+    font-size: 25px;
+    border-radius: 5px;
+    border: 1px solid #e6e6e6;
+}
+.signup .signup-group .email{
+    background: #f4f4f4;
+    font-weight: 600;
+    font-size: 29px;
+    border-radius: 5px;
+    border: 1px solid #e6e6e6;
+}
+
+
+
+
+/* MAIN */
+.main{
+    width: 100%; 
+    height: 100%;
+}
+
+/* MAP */
+.map{
+    width: 70%; 
+    height: 100%;
+}
+.map + .estate-list{
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow-y: auto;
+}
+
+/* LIKE */
+.like{
+    width: 80%; 
+    height: 100%;
+}
+
+/* MYPAGE */
+.mypage{
+    width: 100%; 
+    height: 100%;
+}
+.mypage-contents{
+    width: 100%; 
+    height: calc(100% - 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+.mypage-contents .profile{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:15px;
+}
+.mypage-contents .profile-photo{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mypage-contents .user-info{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.mypage-contents .user-info li{
+    font-size: 20px;
+}
+.mypage-contents .user-info li span{
+    display: inline-block;
+    width: 80px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.mypage-contents .my-estate{
+    width: 50%;
+    height: 100%;
+}
+.mypage-contents .my-estate .my-estate-list{
+    height: 90%;
+    overflow-y: auto;
+}
+
+
+
+/* MODAL */
+.modal-wrap{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+.back-drop::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.6;
+    z-index: -1;
+}
+.modal{
+    position: relative;
+    width: 800px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 0 ;
+}
+.modal h2{
+    width: 100%;
+    height: 50px;
+    padding: 10px 30px;
+    border-bottom: 1px solid #d5d5d5;
+}
+.modal .modal-contents{
+    padding: 10px 30px;
+}
+.modal .close-btn{
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    background: none;
+    color: #fff;
+}
+
+/* ESTATE ADD BUTTON */
+.add-estate-wrap{
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.add-estate-wrap button{
+    background: #2c976c;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+
+/* ESTATE ADD FORM */
+.estate-add-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    padding: 20px;
+}
+.estate-add-form > label {
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+.estate-add-form span{
+    display: inline-block;
+    width: 100px;
+    font-size: 15px;
+}
+.estate-add-form input{
+    width: calc(100% - 100px);
+    margin: 0;
+}
+.estate-add-form input[type="radio"]{
+    width: 50px;
+}
+.estate-add-form button{
+    background: none;
+    color: #555;
+    font-size: 10px;
+    padding: 10px;
+    border: 1px solid #cfcfcf;
+}
+.estate-add-form .submit-btn{
+    margin-top: 10px;
+    background: #43ac82;
+    color: #fff;
+    font-size: 14px;
+}
+
+.estate-add-form .submit-btn:hover{
+    background: #2c976c;
+}
+
+/* IMAGE UPLOADER */
+.image-item__btn-wrapper > button{
+    padding: 5px;
+    font-size: 5px;
+    border-radius: 3px;
+}
+
+/* DAUM POST CODE */
+.postcode-btn{
+    position: absolute;
+
+    height: 100%;
+    right: 0;
+    top: 0;
+    font-size: 13px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #70c9bf;
+    border-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* ESTATE LIST */
+.estate-list{
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5px;
+    overflow-y: auto;
+}
+.estate-list li{
+    width: 100%;
+    position: relative;
+}
+.estate-list li .like-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.estate-list li a{
+    width: 100%;
+    display: flex;
+    align-self: flex-start;
+    justify-content: flex-start;
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid #eee;
+}
+
+.estate-list li dl{
+    width: calc(100% - 125px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5px;
+}
+.estate-list li dl dt{
+    width: calc(100% - 50px);
+    font-size: 15px;
+    font-weight: 600;
+}
+.estate-list li dl dd{
+    font-size: 13px;
+    letter-spacing: -0.5px;
+    color: #555;
+}
+.estate-list li dl dd.price{
+    font-size: 17px;
+    font-weight: 600;
+    color: #3ccf94;
+}
+
+
+.demoPage{
+    border: 1px solid #000;
+}

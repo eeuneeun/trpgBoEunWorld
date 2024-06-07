@@ -1,0 +1,51 @@
+###회원가입
+POST http://localhost:3000/api/user HTTP/1.1
+N8ImGua8Se0fdBeFyeQhIWSPPfBnV1zHHKyigpTY
+
+{
+    "name": "홍길동",
+    "email" : "test9991@naver.com",
+    "password": "1234"
+}
+
+### 로그인
+# @name login
+POST http://localhost:3000/api/login HTTP/1.1
+content-type: application/json
+
+{
+    "email" : "test999@naver.com",
+    "password": "1234"
+}
+
+### 로그아웃
+POST http://localhost:3000/api/login HTTP/1.1
+content-type: application/json
+
+{
+    "email" : "sacroo@naver.com",
+    "password": "test1234!"
+}
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiZW1haWwiOiJ0ZXN0OTk5QG5hdmVyLmNvbSIsIm5hbWUiOiLtmY3quLjrj5kiLCJpYXQiOjE3MTUwNTEzMjcsImV4cCI6MTcxNTA1NDkyN30.zyODjTpQboNM0Z7efa6QfFFdVj0DVzQ5edlXdc_vnzE
+
+### 포스팅 조회
+GET http://localhost:3000/api/user/8 HTTP/1.1
+authorization: {{token}}
+
+
+
+### 네이버 GEO CODING
+GET  https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode?query=서울 동대문구 외대역동로 14 (휘경동, 휘경센트레빌)
+Accept: application/json
+X-NCP-APIGW-API-KEY-ID : pinbio9kr3
+X-NCP-APIGW-API-KEY : N8ImGua8Se0fdBeFyeQhIWSPPfBnV1zHHKyigpTY
+
+
+### 네이버 GEO CODING NEXTJS API
+GET  http://localhost:3000/api/geocode?address=서울 동대문구 외대역동로 14 (휘경동, 휘경센트레빌)
+X-NCP-APIGW-API-KEY-ID : pinbio9kr3
+X-NCP-APIGW-API-KEY : N8ImGua8Se0fdBeFyeQhIWSPPfBnV1zHHKyigpTY
+
+### 관악구 헌옷 수거함 정보
+GET  http://localhost:3000/api/closetbox
