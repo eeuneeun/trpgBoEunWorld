@@ -13,11 +13,15 @@ datasource db {
 model User {
   id       Int     @id @default(autoincrement())
   email    String  @unique
-  name     String?
-  password String
+  name     String
+  password String 
+  provider  String
+  profilePhoto String?
+  singupDate  DateTime?
   posts    Post[]
-  Estate   Estate[]
-  contract Contract[]
+  Game   Game[]
+  Like Like[]
+  Favorite Favorite[]
 }
 
 model Post {
@@ -29,7 +33,7 @@ model Post {
   authorId  Int
 }
 
-model Contract {
+model Game {
   id        Int     @id @default(autoincrement())
   title     String
   address   String
@@ -42,7 +46,7 @@ model Contract {
   authorId  Int
 }
 
-model Estate{
+model Like{
   id        Int     @id @default(autoincrement())
   title     String
   address   String
@@ -59,15 +63,17 @@ model Estate{
   authorId  Int
 }
 
-model ClosetBox {
+model History {
   title     String  @id
   address   String
   lat       Float
   long      Float
 }
 
-model Image {
+model Favorite {
   id   Int    @id @default(autoincrement())
   name String
   data Bytes
+  author    User    @relation(fields: [authorId], references: [id])
+  authorId  Int
 }

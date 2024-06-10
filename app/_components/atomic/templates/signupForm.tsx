@@ -7,6 +7,7 @@ export interface ISignupFormProps {
     name : string,
     email : string,
     password : string,
+    signupType : string
 }
 
 export function SignupForm (){
@@ -29,6 +30,7 @@ export function SignupForm (){
                 name : data.name,
                 email: data.email,
                 password: data.password,
+                provider : "email"
             }),
         })
         
@@ -36,6 +38,9 @@ export function SignupForm (){
             alert("사용중인 이메일입니다!")
         }else if(result.status == 200){
             alert("가입되었습니다.")
+            
+            // ★ TO DO : 세션에 유저 정보 넣어주기
+            
             router.push("/")
 
         }

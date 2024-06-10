@@ -1,7 +1,8 @@
 import HTMLFlipBook from "react-pageflip";
 
-export function MyBook(props) {
+export function MyBook() {
   return (
+    //@ts-ignore
     <HTMLFlipBook width={500} height={500}>
       <div className="demoPage">Page 1</div>
       <div className="demoPage">Page 2</div>

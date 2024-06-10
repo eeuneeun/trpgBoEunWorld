@@ -1,7 +1,6 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
-  "/(pages)/game/page": "app/(pages)/game/page.js",
-  "/(pages)/game/gameBook/page": "app/(pages)/game/gameBook/page.js"
+  "/page": "app/page.js",
+  "/(pages)/auth/signin/page": "app/(pages)/auth/signin/page.js",
+  "/(pages)/auth/signup/page": "app/(pages)/auth/signup/page.js",
+  "/(pages)/mypage/page": "app/(pages)/mypage/page.js"
 }

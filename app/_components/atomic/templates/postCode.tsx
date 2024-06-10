@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import { useDaumPostcodePopup } from 'react-daum-postcode';
-import { IEstateAddFormProps } from './estateAddForm';
 
 export default function Postcode({...props}){
   const open = useDaumPostcodePopup("//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js");

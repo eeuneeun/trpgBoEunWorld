@@ -5,6 +5,7 @@ import * as bcrypt from 'bcrypt'
 interface RequestBody {
   email: string;
   password: string;
+  signupType : string;
 }
 
 export async function POST(request: Request) {
@@ -16,7 +17,11 @@ export async function POST(request: Request) {
     },
   })
 
-  console.log("####로그인 user", body)
+  if(user == null){
+    return new Response(JSON.stringify({ error: 'No Authorization' }), {
+      status: 401,
+    })
+  }
 
   if (user && (await bcrypt.compare(body.password, user.password))) {
     const { password, ...userWithoutPass } = user;
@@ -27,8 +32,6 @@ export async function POST(request: Request) {
       ...userWithoutPass,
       accessToken,
     };
-
-    console.log("####로그인", result)
 
     return new Response(JSON.stringify(result))
   } else return new Response(JSON.stringify(null))

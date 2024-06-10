@@ -7,7 +7,7 @@ export async function GET(
 ) {
   // 토큰 인증 & 인가
   const accessToken = request.headers.get('authorization')
-  console.log(accessToken)
+  console.log("accessToken",accessToken)
 
   if (!accessToken || !verifyJwt(accessToken)) {
     return new Response(JSON.stringify({ error: 'No Authorization' }), {
@@ -15,22 +15,12 @@ export async function GET(
     })
   }
 
-  console.log(params)
+  const findId = Number(params.id)
 
-  const id = Number(params.id)
-
-  const userPosts = await prisma.post.findMany({
+  const userInfo = await prisma.user.findUnique({
     where: {
-      authorId: id,
-    },
-    include: {
-      author: {
-        select: {
-          email: true,
-          name: true,
-        },
-      },
-    },
+      id: findId,
+    }
   })
-  return new Response(JSON.stringify(userPosts))
+  return new Response(JSON.stringify(userInfo))
 }

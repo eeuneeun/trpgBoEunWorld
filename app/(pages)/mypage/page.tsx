@@ -1,10 +1,8 @@
 
 'use client'
 
-import Modal from '@/app/_components/atomic/templates/modal';
-import { MyEstate } from '@/app/_components/atomic/templates/myEstate';
 import { signIn, signOut, useSession } from 'next-auth/react'
-
+import { Profile } from '@/app/_components/atomic/organisms/profile';
 export default function Mypage() {
   const {data : session} = useSession();
 
@@ -15,7 +13,7 @@ export default function Mypage() {
 
         <div className='profile'>
           <div className='profile-photo'>
-            <img src="/profile.png" alt="프로필 사진" />
+            <img src={session?.user.picture} alt="프로필 사진" />
           </div>
 
           <ul className='user-info'>
@@ -30,7 +28,7 @@ export default function Mypage() {
           </ul>
         
         </div>
-        <MyEstate />
+        <Profile />
       </div>
     </div>
   );
