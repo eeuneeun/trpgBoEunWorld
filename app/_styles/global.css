@@ -626,8 +626,27 @@
     font-weight: 600;
     color: #3ccf94;
 }
+/* ★ GAME */
+/* 1. BOOK PAGE */
+.game{
+    padding: 20px;
+}
+.book-page{
+    background: url("/app/_public/bg/old_paper_book.png") no-repeat center;
+}
+.book_bg{
+    position: absolute;
+    z-index: -1;
+}
+.book-page .contents{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
 
-
-.demoPage{
-    border: 1px solid #000;
+.book-page .contents .main-title{
+    font-size: 19px;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 10px;
 }

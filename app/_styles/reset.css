@@ -210,7 +210,8 @@ button{
 
 .signout-btn{background: #70c9bf;}
 .signin-btn{background: #43ac82;}
-.like-btn{background: none; color: #000;}
+.like-btn{background: none; color: #000; padding: 0 5px;}
+.start-btn {background: #70c9bf;  border-radius:5px; padding: 5px; color: #fff;}
 
 
 /* IMAGE UPLOADER */
