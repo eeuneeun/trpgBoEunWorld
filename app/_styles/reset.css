@@ -70,6 +70,12 @@ body {
   font-family: "Calibri", "MalgunGothic", "sans-serif";
   text-align: left;
 }
+h1, h2, h3, h4, h5, h6, button{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 img,
 fieldset,
 iframe {
@@ -82,6 +88,7 @@ input,
 select,
 button {
   vertical-align: middle;
+  justify-content: center;
 }
 button {
   background: none;
@@ -201,7 +208,8 @@ body {
 
 
 /* BUTTON GROUP */
-button{
+button, 
+.btn, .btn::after, .btn::before, .btn:visited{
   padding: 15px 20px;
   border-radius: 10px; 
   color: #eee;
@@ -210,8 +218,8 @@ button{
 
 .signout-btn{background: #70c9bf;}
 .signin-btn{background: #43ac82;}
-.like-btn{background: none; color: #000; padding: 0 5px;}
-.start-btn {background: #70c9bf;  border-radius:5px; padding: 5px; color: #fff;}
+.like-btn{background: none; color: #ffd15d; padding: 0;}
+.start-btn {background: #70c9bf;  border-radius:5px; padding: 5px 10px; padding-left:8px; font-size: 15px;}
 
 
 /* IMAGE UPLOADER */

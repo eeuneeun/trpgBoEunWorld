@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import synopsis from '../../../_public/storyData/Synopsis.json'
 
 export function TypingTitle(){
   const [blogTitle, setBlogTitle] = useState('');
@@ -25,32 +24,34 @@ export function TypingTitle(){
     };
   });
 
-  return <h1 className="main-title">{blogTitle}</h1>;
+  return <h3 className="main-title">{blogTitle}</h3>;
 };
 
-export function TypingSynopsis(){
-  const [story, setStory] = useState('');
-  const [count, setCount] = useState(0);
-  const title = synopsis["1"] + synopsis["2"] ;
+export function TypingSynopsis({...props}){
+  const originString = props.typeString;
+
+  const [typingStory, setTypingStory] = useState('')
+  const [count, setCount] = useState(-1);
 
   useEffect(() => {
     const typingInterval = setTimeout(() => {
-      setStory((prevStoryValue) => {
-        let result = prevStoryValue ? prevStoryValue + title[count] : title[0];
+      setTypingStory((prevStoryValue) => {
+        let result = prevStoryValue ? prevStoryValue + originString[count] : originString[0];
         setCount(count + 1);
         
         return result;
         });
     }, 100);
 
-    if (count == title.length) {
+    if (count == originString.length) {
         clearInterval(typingInterval);
+        props.setIsNowTyping(false)
     }
 
     return () => {
       clearInterval(typingInterval);
     };
-  });
+  },[count]);
 
-  return <p className="synopsis">{story}</p>;
+  return <p className="synopsis" key={props.key}>{typingStory}</p>;
 }

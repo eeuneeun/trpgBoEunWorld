@@ -1,7 +1,11 @@
 'use client';
 import * as React from 'react';
-import AddIcon from '@mui/icons-material/Add';
+
 import { Tooltip } from '@mui/material';
+
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import StarIcon from '@mui/icons-material/Star';
+import AddIcon from '@mui/icons-material/Add';
 
 export interface IButtonProps {
   text ?: string
@@ -25,4 +29,17 @@ export function EstateAddBtn(props: IButtonProps){
       </div>
     </Tooltip>
   )  
+}
+
+export function LikeBtn() {
+  const [isLike, setIsLike] = React.useState(false)
+  return (
+    <button className='like-btn' onClick={()=>setIsLike(!isLike)}>
+        {
+          isLike 
+          ? <StarIcon />
+          : <StarBorderIcon />
+        }
+    </button>
+  );
 }
