@@ -28,12 +28,15 @@
     },
     "target": "ES2017"
   },
+  "ts-node": {
+    "esm": true
+  },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "server.js", "server.js"  ],
   "exclude": [
     "node_modules"
   ]

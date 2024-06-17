@@ -1,5 +1,7 @@
 
 import { signIn, signOut, useSession } from 'next-auth/react'
+import useSWR from 'swr';
+import { commonFetcher } from '../_lib/commonFetcher';
 
 type TCredentials = {
  email : string;
@@ -7,6 +9,7 @@ type TCredentials = {
 }
 
 type TUserInfo = {
+    id : number;
     name : string;
     email : string;
     password : string;
@@ -51,4 +54,15 @@ export async function getUserData(){
         },
       })
   return res.body;
+}
+
+
+function useUser (id : TUserInfo) {
+  const { userData, error, isLoading } = useSWR(`/api/user/${id}`, commonFetcher)
+ 
+  return {
+    user: userData,
+    isLoading,
+    isError: error
+  }
 }
