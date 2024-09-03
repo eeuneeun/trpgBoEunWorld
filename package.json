@@ -1,13 +1,17 @@
 {
-  "name": "next-auth-test",
+  "name": "boeun_world_game_red-bean_black-bean",
+  "homepage": "http://eeuneeun.github.io/trpgBoEunWorld",
   "version": "0.1.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "ts-node server.js",
+    "dev": "concurrently -n NEXT,TS -c magenta,cyan \"next dev -p 3030\" \"yarn ts --watch\"",
+    "ts": "tsc --noEmit --incremental --preserveWatchOutput --pretty",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build && next export",
+    "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.2.0",
@@ -34,7 +38,7 @@
     "next": "^14.2.3",
     "next-auth": "^4.24.7",
     "nextjs-websocket": "^1.0.11",
-    "npx": "^3.0.0",
+    "npx": "^10.2.2",
     "page-flip": "^2.0.7",
     "puppeteer": "^22.10.0",
     "react": "^18",
@@ -47,7 +51,8 @@
     "socket.io": "^4.7.5",
     "socket.io-client": "^4.7.5",
     "swr": "^2.2.5",
-    "uuid": "^10.0.0"
+    "uuid": "^10.0.0",
+    "zustand": "^4.5.5"
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^5.32.1",
@@ -58,11 +63,11 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
+    "gh-pages": "^5.0.0",
     "postcss": "^8",
     "prisma": "^5.15.0",
-    "tailwindcss": "^3.4.1",
     "tslib": "^2.6.3",
-    "typescript": "^5"
+    "typescript": "^5.5.4"
   },
   "proxy": "https://naveropenapi.apigw.ntruss.com/map-geocode"
 }

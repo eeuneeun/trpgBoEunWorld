@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
-import Providers from "./_lib/HOC/Provider"; // NextAuth 세션 제공자 
-import useSWR, { SWRConfig } from 'swr' // Swr 전역 설정
+import Providers from "./_lib/HOC/Provider"; // NextAuth 세션 제공자
+import useSWR, { SWRConfig } from "swr"; // Swr 전역 설정
 
 import { Inter } from "next/font/google";
 import "./_styles/reset.css";
@@ -11,7 +11,6 @@ import Header from "./_components/layout/header";
 import Snb from "./_components/layout/snb";
 
 const inter = Inter({ subsets: ["latin"] });
-
 
 export const metadata: Metadata = {
   title: "FLAT MATCHER",
@@ -30,18 +29,16 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={inter.className}>
-        <Providers>
-          {/* <SWRConfig
+        {/* <SWRConfig
             value={{
               refreshInterval: 3000,
               fetcher: (resource, init) => fetch(resource, init).then(res => res.json())
-            }}
-          >   */}
-            <Header />
-            <Snb />
-            <main className="contents-wrap">
-              {children}
-            </main>
+              }}
+              >   */}
+        <Providers>
+          <Header />
+          <Snb />
+          <main className="contents-wrap">{children}</main>
           {/* </SWRConfig> */}
         </Providers>
       </body>

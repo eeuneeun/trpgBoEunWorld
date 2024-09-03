@@ -1,31 +1,36 @@
-'use client'
+"use client";
 
-import * as React from 'react';
+import { useSession } from "next-auth/react";
+import Link from "next/link";
 
-import Link from 'next/link';
-import { useSession } from 'next-auth/react'
-import ClearAllIcon from '@mui/icons-material/ClearAll';
-import UserInfoForHeader from '../atomic/organisms/userInfoForHeader';
+import ClearAllIcon from "@mui/icons-material/ClearAll";
 
-export default function Header () {
-  const {data : session} = useSession();
-  const [isSnbOpen, setIsSnbOpen] = React.useState(false)
+import UserInfoForHeader from "../atomic/organisms/userInfoForHeader";
+import useLayoutStore from "@/app/_store/useLayout";
+
+export default function Header() {
+  const { data: sessionData } = useSession();
+  console.log("sessionData", sessionData);
+  const { isSnbOpen, toggleOpen } = useLayoutStore();
+
   return (
     <div className={`header ${isSnbOpen ? "open" : ""}`}>
-        <h1 className='logo'>
-            <Link href="/">
-                <span className='summary-logo'>🫘</span>
-                <span className='full-logo'>🫘Red&Black Beans</span>
-            </Link>
-        </h1>
-        <div className='gnb'>
-          <button className='snb-open-btn' onClick={()=>setIsSnbOpen(!isSnbOpen)}>
-            <ClearAllIcon />
-          </button>
-         
-          <UserInfoForHeader session={session} />
-          
-        </div>
+      <h1 className="logo">
+        <Link href="/">
+          <span className="summary-logo">🫘</span>
+          <span className="full-logo">🫘Red&Black Beans</span>
+        </Link>
+      </h1>
+      <div className="gnb">
+        <button
+          className="snb-open-btn"
+          onClick={() => toggleOpen("isSnbOpen", !isSnbOpen)}
+        >
+          <ClearAllIcon />
+        </button>
+
+        <UserInfoForHeader sessionData={sessionData} />
+      </div>
     </div>
   );
 }
