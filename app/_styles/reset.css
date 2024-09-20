@@ -70,7 +70,13 @@ body {
   font-family: "Calibri", "MalgunGothic", "sans-serif";
   text-align: left;
 }
-h1, h2, h3, h4, h5, h6, button{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -159,12 +165,11 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-
 .flex-start {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .flex-item {
@@ -199,48 +204,63 @@ body {
   background: url("/img/list-dot.svg") no-repeat 0 10px;
 }
 
-.active{
+.active {
   display: flex !important;
 }
-.in-active{
+.in-active {
   display: none !important;
 }
 
-
 /* BUTTON GROUP */
-button, 
-.btn, .btn::after, .btn::before, .btn:visited{
+button,
+.btn,
+.btn::after,
+.btn::before,
+.btn:visited {
   padding: 15px 20px;
-  border-radius: 10px; 
+  border-radius: 10px;
   color: #eee;
   background: #5b5b5b;
 }
 
-.signout-btn{background: #70c9bf;}
-.signin-btn{background: #43ac82;}
-.like-btn{background: none; color: #ffd15d; padding: 0;}
-.start-btn {background: #70c9bf;  border-radius:5px; padding: 5px 10px; padding-left:8px; font-size: 15px;}
-
+.signout-btn {
+  background: #70c9bf;
+}
+.signin-btn {
+  background: #43ac82;
+}
+.like-btn {
+  background: none;
+  color: #ffd15d;
+  padding: 0;
+}
+.start-btn {
+  background: #70c9bf;
+  border-radius: 5px;
+  padding: 5px 10px;
+  padding-left: 8px;
+  font-size: 15px;
+}
 
 /* IMAGE UPLOADER */
-.upload-image-wrapper{
+.upload-image-wrapper {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.upload-image-wrapper .btn-group{
+.upload-image-wrapper .btn-group {
   display: flex;
   align-items: center;
-  justify-content: flex-start; 
+  justify-content: flex-start;
 }
-.upload-image-wrapper .thumbnail-wrapper{
+.upload-image-wrapper .thumbnail-wrapper {
   display: flex;
   align-items: center;
-  justify-content: flex-start; 
+  justify-content: flex-start;
   gap: 10px;
 }
 
-.image-item{
+.image-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -251,11 +271,11 @@ button,
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   gap: 5px;
 }
 
-.image-item .btn-group button{
+.image-item .btn-group button {
   display: flex;
   align-items: center;
   justify-content: center;

@@ -65,7 +65,7 @@
     "eslint-config-next": "14.2.3",
     "gh-pages": "^5.0.0",
     "postcss": "^8",
-    "prisma": "^5.15.0",
+    "prisma": "^5.19.1",
     "tslib": "^2.6.3",
     "typescript": "^5.5.4"
   },
